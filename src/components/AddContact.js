@@ -22,18 +22,18 @@ class AddContact extends React.Component {
             <div className="ui main">
                 <h2>Add Contact</h2>
                 <form className="ui form">
-                    <div className="field" />
+                    <div className="field" >
                     <label>Name</label>
-                    <input type="text" name="name" placeholder="Email" />
-                </form>
-            </div>
-            <div className="field">
+                    <input type="text" name="name" placeholder="Name" />
+                 </div>
+                 <div className="field">
                     <label>Email</label>
                     <input type="text" name="Email" placeholder="Email" />
                 </div>
                 <button className="ui button blue">Add</button>
               </form>
           </div>
-            );
+          );
         }
-      
+    } 
+      export default AddContact;
