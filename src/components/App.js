@@ -6,10 +6,14 @@ import ContactList from "./ContactList";
 
 function App() {
   const [contents, setContacts] = useState([]);
+
+    const addContactHandeler = (contact) => {
+      consoul.log(contact);
+    }
     return (
     <div className="ui container">
      <Header />
-     <AddContact />
+     <AddContact addContactHandeler={addContactHandeler}/>
      <ContactList contacts= {contacts} />
    </div>
   );
