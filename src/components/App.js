@@ -9,7 +9,8 @@ function App() {
 
     const addContactHandeler = (contact) => {
       consoul.log(contact);
-    }
+      setContacts([...contacts, contact])
+    };
     return (
     <div className="ui container">
      <Header />
