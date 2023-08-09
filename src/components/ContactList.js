@@ -7,6 +7,6 @@ const ContactList = (props) => {
      const renderContactlist = props.contacts.map((contact) => {
      return <ContactCard contact={contact}></ContactCard>;
      });
-     return <div className="ul celled list">{renderContactList}</div>
+     return <div className="ui called list">{renderContactList}</div>
 };
 export default Contactlist;
