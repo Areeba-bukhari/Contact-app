@@ -14,8 +14,13 @@ function App() {
     };
 
     useEffect(() => {
+      const retriveContact = JSON.parse (localStorage.getItem(LOCAL_STORAGE_KEY));
+    }, [contacts]);
+
+    useEffect(() => {
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contact));
     }, [contacts]);
+
     return (
     <div className="ui container">
      <Header />
