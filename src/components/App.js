@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
+import Contactlist from "./ContactList";
 
 function App() {
   const LOCAL_STORAGE_KEY = "contact";
@@ -11,9 +12,16 @@ function App() {
 
     const addContactHandeler = (contact) => {
       consoul.log(contact);
-      setContacts([...contacts, contact])
+      setContacts([...contacts, {id: uuid(), ...contact }])
     };
 
+    const removeContactHandeler =(id) => {
+      const newContactList = contact.filter((contact) => {
+        return contact.id !== id;
+    });
+
+    setContacts(newContactList);
+  };
     useEffect(() => {
       const retriveContact = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
       if(retriveContacts) setContacts(retriveContacts);
@@ -27,7 +35,7 @@ function App() {
     <div className="ui container">
      <Header />
      <AddContact addContactHandeler={addContactHandeler}/>
-     <ContactList contacts= {contacts} />
+     <ContactList contacts= {contacts} getContactId={removeContactHandeler} />
    </div>
   );
 }
